@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Form
+		</title>
+		<link rel="stylesheet" type="text/css" href="css/form.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="jQ/valid1.js"></script>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div class="payment-area">
+			<h1>Form with Jquery</h1>
+			<div>
+				<form class="myform" method="post" action="#">
+					<label >Pincode</label>
+					<input type="number" class="pincode" id="pin" placeholder="6 digit pincode" >
+					<label >Name</label>
+					<input type="text" class="name" placeholder="Full Name" id="value" >
+					<label >Address</label>
+					<input type="address" class="address" id="adre" placeholder="Flat/House No. Colony/Street No." >
+					<label >Email</label>
+					<input type="email" class="landmark"  id="email">
+					<label >month</label>
+					<input type="month" class="city" id="month">
+					<label >Date</label>
+					<input type="date" class="city" id="date">
+					<label >Password</label>
+					<input type="password" class="state" id="pass" placeholder="Password" >
+					<label >Mobile Number</label>
+					<input type="number" class="mobile" placeholder="10 digit mobile number" >
+					<input type="file" id="file" class="file" >
+					<div id="address123">
+						<label >Home</label>
+						<input type="radio" value="Home/Personal" id="rad1" class="r1" name="1" >
+						<label>Office</label>
+						<input type="radio" value="Office/Com" id="rad2" class="r2" name="1" >
+					</div>
+					<input type="reset" value="Reset" class="reset">
+					<input  type="button" name="submit" id="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
