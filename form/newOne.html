@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"
+			/>
+	</head>
+	<body>
+		<table id="table_id">
+			<thead>
+				<tr>
+					<th class="subj_name">Subject</th>
+					<th>Marks</th>
+					<th>Grade</th>
+					<th>Last Modified</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		<script
+			type="text/javascript"
+			charset="utf8"
+			src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+			></script>
+		<script
+			type="text/javascript"
+			charset="utf8"
+			src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"
+			></script>
+		<script>
+		$(function() {
+		$("#table_id").dataTable({
+            dom: 'Blfrtip',
+ 			"aLengthMenu": [ 3, 5, 10, 15, 100 ],
+			"iDisplayLength": 5,
+			aaData: [
+			["Hello", "95", "A", "null"],
+			["Hello1", "85", "B", "null"],
+			["Hello2", "70", "A+", "2019-06-11 06:30:00"],
+			["Hello3", "80", "B", "null"],
+			["Hello4", "75", "B", "null"],
+			["Hello5", "70", "A", "2019-11-09 06:30:00"],
+			["Hello6", "80", "A+", "null"] ],
+			aoColumnDefs: [
+			{
+			sTitle: "Subject Name",
+			aTargets: ["subj_name"] },
+			{
+			aTargets: [3],
+			sType: "date",
+			mRender: function(date, type, full) {
+			return full[1] == "70" ? new Date(date).toDateString() : "N/A";
+			}
+			}
+			] });
+			});
+		</script>
+	</body>
+</html>

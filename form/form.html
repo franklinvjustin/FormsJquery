@@ -4,6 +4,7 @@
 		<title>
 			Form
 		</title>
+
 		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="jQ/valid1.js"></script>
@@ -11,33 +12,41 @@
 	</head>
 	<body>
 		<div class="payment-area">
-			<h1>Form with Jquery</h1>
+			<div class="main1">
+				<button id="hiding">MINIMISE</button>
+			</div>
 			<div>
-				<form class="myform" method="post" action="#">
+				<form class="myform" class="form" method="post" action="#">
 					<label >Pincode</label>
-					<input type="number" class="pincode" id="pin" placeholder="6 digit pincode" >
+					<input type="number" class="pincode" id="pin" onblur="checkPin();" placeholder="6 digit pincode" >
 					<label >Name</label>
-					<input type="text" class="name" placeholder="Full Name" id="value" >
+					<input type="text" class="name" placeholder="Full Name" id="value" onblur="checkName();" >
 					<label >Address</label>
-					<input type="address" class="address" id="adre" placeholder="Flat/House No. Colony/Street No." >
+					<input type="address" class="address" id="adress" onblur="checkAddress();" placeholder="Flat/House No. Colony/Street No." >
 					<label >Email</label>
-					<input type="email" class="landmark"  id="email">
+					<input type="email" class="landmark"  id="email"  onblur="checkEmail();">
 					<label >month</label>
-					<input type="month" class="city" id="month">
+					<input type="month" class="city" onblur="checkMonth();" id="month">
 					<label >Date</label>
-					<input type="date" class="city" id="date">
+					<input type="date" class="city" onblur="checkDate();" id="date">
 					<label >Password</label>
-					<input type="password" class="state" id="pass" placeholder="Password" >
+					<input type="password" class="state" id="pass" placeholder="Password" onblur="checkPassword();" >
 					<label >Mobile Number</label>
-					<input type="number" class="mobile" placeholder="10 digit mobile number" >
-					<input type="file" id="file" class="file" >
+					<input type="number" class="mobile" id="mobile" onblur="checkNumber();" placeholder="10 digit mobile number" >
+					<input type="file" id="file" onblur="checkFile();" class="file" >
+					<p></p>
+					<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  					<span >Tablet</span>
+  					<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+					<span >Mobile</span>
 					<div id="address123">
 						<label >Home</label>
-						<input type="radio" value="Home/Personal" id="rad1" class="r1" name="1" >
+						<input type="radio" value="Home/Personal"  id="rad1" class="r1" name="1" >
 						<label>Office</label>
 						<input type="radio" value="Office/Com" id="rad2" class="r2" name="1" >
 					</div>
 					<input type="reset" value="Reset" class="reset">
+					<span id="error_message"></span>
 					<input  type="button" name="submit" id="submit" value="Submit">
 				</form>
 			</div>
