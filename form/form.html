@@ -4,47 +4,56 @@
 		<title>
 			Form
 		</title>
-
-		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="jQ/valid1.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<meta charset="UTF-8">
 	</head>
 	<body>
 		<div class="payment-area">
 			<div class="main1">
-				<button id="hiding">MINIMISE</button>
+				<button id="hiding">Show/Hide</button>
 			</div>
 			<div>
 				<form class="myform" class="form" method="post" action="#">
 					<label >Pincode</label>
 					<input type="number" class="pincode" id="pin" onblur="checkPin();" placeholder="6 digit pincode" >
-					<label >Name</label>
+					<p id="error_message1"></p>
+					<label ><br>Name</label>
 					<input type="text" class="name" placeholder="Full Name" id="value" onblur="checkName();" >
-					<label >Address</label>
+					<p id="error_message2"></p>
+					<label ><br>Address</label>
 					<input type="address" class="address" id="adress" onblur="checkAddress();" placeholder="Flat/House No. Colony/Street No." >
-					<label >Email</label>
+					<p id="error_message3"></p>
+					<label ><br>Email</label>
 					<input type="email" class="landmark"  id="email"  onblur="checkEmail();">
-					<label >month</label>
+					<p id="error_message4"></p>
+					<label ><br>month</label>
 					<input type="month" class="city" onblur="checkMonth();" id="month">
-					<label >Date</label>
+					<p id="error_message5"></p>
+					<label ><br>Date</label>
 					<input type="date" class="city" onblur="checkDate();" id="date">
-					<label >Password</label>
+					<p id="error_message6"></p>
+					<label ><br>Password</label>
 					<input type="password" class="state" id="pass" placeholder="Password" onblur="checkPassword();" >
-					<label >Mobile Number</label>
+					<p id="error_message7"></p>
+					<label ><br>Mobile Number</label>
 					<input type="number" class="mobile" id="mobile" onblur="checkNumber();" placeholder="10 digit mobile number" >
+					<p id="error_message11"></p>
 					<input type="file" id="file" onblur="checkFile();" class="file" >
-					<p></p>
+					<p id="error_message8"></p>
 					<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
   					<span >Tablet</span>
   					<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
 					<span >Mobile</span>
+					<p id="error_message10"></p>
 					<div id="address123">
 						<label >Home</label>
 						<input type="radio" value="Home/Personal"  id="rad1" class="r1" name="1" >
 						<label>Office</label>
 						<input type="radio" value="Office/Com" id="rad2" class="r2" name="1" >
 					</div>
+					<p id="error_message9"></p>
 					<input type="reset" value="Reset" class="reset">
 					<span id="error_message"></span>
 					<input  type="button" name="submit" id="submit" value="Submit">

@@ -1,6 +1,7 @@
 $(document).ready(function () {
 	var value = false;
 	var submit = false;
+	var count = 0;
 	$("#SubjectsList").change(function () {
 		var selectedSubject = $("#SubjectsList option:selected").val();
 		alert("You have selected the country - " + selectedSubject);
@@ -11,8 +12,8 @@ $(document).ready(function () {
 	});
 	$("#submit").click(function () {
 		var b = $("#pass").val();
-		var hey = 0;
 		submit = true; {
+			count=0;
 			checkPin();
 			checkName();
 			checkAddress();
@@ -22,9 +23,12 @@ $(document).ready(function () {
 			checkPassword();
 			checkNumber();
 			checkFile();
+			checkCheck();
 			checkRadio();
-			window.alert("All Values are Validated");
-			$("#error_message").text("");
+			if(count==0){
+				window.alert("All Values are Validated");
+				$("#error_message").text("");
+			}
 			submit = false;
 		}
 
@@ -49,28 +53,26 @@ $(document).ready(function () {
 function checkPassword() {
 	var pass = $("#pass").val();
 	if (pass == "" || (pass.length) < 6) {
-		$("#error_message").text("Password must be less than 6");
-		$("#pass").css({
-			"border": "1px solid red"
-		});
-
-		hey++;
+		$("#error_message7").text("Password must be less than 6");
+		return;
 	} else {
 		var b = $("#pass").val();
 		if (!(b.includes("@") || b.includes("#") || b.includes("&") || b.includes("&"))) {
-			$("#error_message").text("Password must contain a special character");
+			$("#error_message7").text("Password must contain a special character");
 			$("#pass").css({
 				"border": "1px solid red"
 			});
 
-			hey++;
+			count++;
+			return;
 		} else {
 			 {
-				$("#error_message").text("");
+				$("#error_message7").text("");
 			}
 			$("#pass").css({
 				"border": "1px solid black"
 			});
+			return;
 		}
 	}
 }
@@ -80,42 +82,46 @@ function checkEmail() {
 	var mail = /[^@]+@[a-zA-Z]+\.[a-zA-Z]{2,6}/
 	if (mail.test(email)) {
 		 {
-			$("#error_message").text("");
+			$("#error_message4").text("");
 		}
 		$("#email").css({
 			"border": "1px solid black"
 		});
+		return;
+	
 	} else {
 		$("#email").css({
 			"border": "1px solid red"
 		});
-		$("#error_message").text("not a mail id");
-		hey++;
+		$("#error_message4").text("not a mail id");
+		return;
+		count++;
+		
 	}
 }
 
 function checkName() {
 	var name = $("#value").val();
 	if (name.length < 6) {
-		$("#error_message").text("Name  Must contains atleast 6 Chracters");
+		$("#error_message2").text("Name  Must contains atleast 6 Chracters");
+		return;
 		$("#value").css({
 			"border": "1px solid red"
 		});
-		hey++;
+		count++;
 	} else if (/^[a-zA-Z]+$/.test(name)) {
-		 {
-			$("#error_message").text("");
-		}
+			$("#error_message2").text("");
 			$("#value").css({
 			"border": "1px solid black"
 		});
-
+		return;
 	} else {
 		$("#value").css({
 			"border": "1px solid red"
 		});
-		$("#error_message").text("Name  Must contains No Numbers");
-		hey++;
+		$("#error_message2").text("Name  Must contains No Numbers");
+		count++;
+		return;
 	}
 
 
@@ -124,18 +130,19 @@ function checkName() {
 function checkNumber() {
 	var y = $("#mobile").val();
 	if (y.length != 10) {
-		$("#error_message").text("Mobile Number Must contains 10 Numbers");
+		$("#error_message11").text("Mobile Number Must contains 10 Numbers");
 		$("#mobile").css({
 			"border": "1px solid red"
 		});
-		hey++;
+		return;
 	} else {
 		 {
-			$("#error_message").text("");
+			$("#error_message11").text("");
 		}
 			$("#mobile").css({
 			"border": "1px solid black"
 		});
+		return;
 	}
 
 }
@@ -144,20 +151,22 @@ function checkNumber() {
 function checkPin() {
 	var y = $("#pin").val();
 	if (y.length != 6) {
-		$("#error_message").text("Pin Code Must contains 6 Numbers");
+		$("#error_message1").text("Pin Code Must contains 6 Numbers");
 		$("#pin").css({
 			"border": "1px solid red"
 		});
+		return;
 
 
-		hey++;
+		count++;
 	} else {
 		 {
-			$("#error_message").text("");
+			$("#error_message1").text("");
 		}
 			$("#pin").css({
 			"border": "1px solid black"
 		});
+		return;
 	}
 
 }
@@ -165,14 +174,12 @@ function checkPin() {
 function checkDate() {
 	var k = $("#date").val();
 	if (k == "") {
-		$("#error_message").text("Date must not be empty");
-		hey++;
-		$("#date").css({
-			"border": "1px solid red"
-		});
+		$("#error_message6").text("Date must not be empty");
+		return;
 	} else {
 		 {
-			$("#error_message").text("");
+			$("#error_message6").text("");
+			return;
 		}
 	}
 
@@ -181,18 +188,13 @@ function checkDate() {
 function checkMonth() {
 	var a = $("#month").val();
 	if (a == "") {
-		$("#error_message").text("Month must not be empty");
-		hey++;
-		$("#month").css({
-			"border": "1px solid red"
-		});
+		$("#error_message5").text("Month must not be empty");
+		return;
 	} else {
 		 {
-			$("#error_message").text("");
+			$("#error_message5").text("");
 		}
-			$("#month").css({
-			"border": "1px solid black"
-		});
+		return;
 	}
 
 
@@ -201,19 +203,13 @@ function checkMonth() {
 function checkAddress() {
 	var z = $("#adress").val();
 	if (z == "") {
-		$("#error_message").text("Address must not be empty");
-		hey++;
-		$("#adress").css({
-			"border": "1px solid red"
-		});
-
+		$("#error_message3").text("Address must not be empty");
+		return;
 	} else {
 		 {
-			$("#error_message").text("");
+			$("#error_message3").text("");
 		}
-		$("#adress").css({
-			"border": "1px solid black"
-		});
+		return;
 
 	}
 
@@ -223,18 +219,21 @@ function checkFile() {
 	var img = $("#file").val();
 
 	if (img == "") {
-		$("#error_message").text("Image File must be selected");
-		hey++;
+		$("#error_message8").text("Image File must be selected");
 		$("#file").css({
 			"border": "1px solid red"
 		});
+		return;
 
 	} else {
 		 {
-			$("#error_message").text("");
+			$("#error_message8").text("");
 		$("#file").css({
 			"border": "1px solid black"
-		});		}
+		});	
+		return;	
+		}
+		
 
 	}
 
@@ -243,12 +242,27 @@ function checkFile() {
 
 function checkRadio() {
 	if (!(document.getElementById("rad1").checked || document.getElementById("rad1").checked)) {
-		$("#error_message").text("One Radio Button must be selected");
-		hey++;
+		$("#error_message9").text("One Radio Button must be selected");
+		count++;
+		return;
 	} else {
-		if (!submit) {
-			$("#error_message").text("");
+	 {
+			$("#error_message9").text("");
 		}
+		return;
+	}
+
+}
+function checkCheck() {
+	if (!(document.getElementById("vehicle1").checked || document.getElementById("vehicle2").checked)) {
+		$("#error_message10").text("One Check Box must be selected");
+		count++;
+		return;
+	} else {
+	 {
+			$("#error_message10").text("");
+		}
+		return;
 	}
 
 }

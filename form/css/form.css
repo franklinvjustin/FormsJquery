@@ -1,109 +1,58 @@
-		body {
-            margin: 0;
-            background-color: #f7f7f7;
-            font-family: 'Open Sans', sans-serif;
-        }
-        button{
-            cursor: pointer;
-        }
-        .myform {
-            display: grid;
-            margin-left: 50px;
-            grid-template-columns: 200px 400px;
-            gap: 7%;
-            font-size: 17px;
-        }
-       input[type=text] {
-            height: 32px;
-        }
-        input[type=number] {
-            height: 32px;
-            margin-right: 15px;
-        }
-        input[type=tel] {
-            height: 32px;
-        }
-        input[type=address] {
-            height: 55px;
-        }
-        body {font-family:Verdana, Geneva, sans-serif;}
-        h1 {
-            background-color: #333;
-            color: white;
-            padding: 10px 33px;
-            margin-top: 10px;
-            font-size: 22px;
-        }
-        .finalAdd {
-            display: grid;
-            border: 2px solid #ECEFF1;
-            width: 20%;
-            margin-left: 20px;
-            padding: 6px;
-            gap: 6px;
-        }
-        .myform>button {
-            grid-area: 9/2/10/3;
-            width: 50%;
-            background-color: #E91E63;
-            color: white;
-            padding: 10px 10px;
-            border: 2px solid #E91E63;
-        }
-        .boxbtn {
-            background-color: #E91E63;
-            color: white;
-            padding: 7px 10px;
-            border: 2px solid #E91E63;
-            width: 50%;
-        }
-   		.top-bar {
-            background-color: red;
-            height: 96px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-         .top-bar>div {
-            max-width: 1024px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: white;
-            font-size: 13px;
-        }
-           .payment-area{
-            border: 1px solid #e5e5e5;
-            border-radius: 4px;
-            background-color: white;
-            min-height: 700px;
-            max-width: 1024px;
-            margin: auto;
-        }
-        .deliv{
-        	margin-top:200px;
-        	font-size:14px;
-        	background-color:#ccc;
-        	border:1px solid #e5e5e5;   
-        }
-        .deliv1{
-        	margin-top:5px;
-        	font-size:14px;
-        	background-color:#ccc;
-        	border:1px solid #e5e5e5;   
-        }
-        p{
-        	color:grey;
-        	margin-left:0px;       
-        }
-        .p1{
-        	color:white;
-        }
-        p{
-        	width:4000px;
-        }
-        #error_message{
-        	color:red;
-        
-        }
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto/Roboto-regular.ttf);
+}
+.payment-area{
+	margin:auto;
+	width:500px;
+	background-color:grey;
+	padding:20px;
+	border-radius:10px;
+	color:white;
+	font-family: 'Roboto';font-size: 12px;
+	font-size:13px;
+	
+}
+p{
+	color:red;
+	font-size:12px;
+}
+input{
+	width: 100%;
+  	box-sizing: none;
+  	border: 2px solid grey;
+	border-radius:5px;
+	height:30px;
+	display:block;
+	font-family: 'Roboto';font-size: 12px;
+}
+#hiding{
+	width:100%;
+	background-color: grey;
+	border: none;
+	color:white;
+	font-size:20px;
+}
+#rad1{
+	width:30px;
+	display:inline;
+	vertical-align: middle;
+}
+#rad2{
+	width:30px;
+	display:inline;
+	vertical-align: middle;
+
+}
+#vehicle1{
+	width:30px;
+	display:inline;
+	vertical-align: middle;
+
+}
+#vehicle2{
+	width:30px;
+	display:inline;
+	vertical-align: middle;
+
+}
