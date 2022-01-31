@@ -4,8 +4,7 @@
 		<title>
 			Form
 		</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="jQ/valid1.js"></script>
+		<script src="JavaScript/form.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<meta charset="UTF-8">
 	</head>
@@ -15,7 +14,7 @@
 				<button id="hiding">Show/Hide</button>
 			</div>
 			<div>
-				<form class="myform"  method="post" action="#">
+				<form class="myform" method="post" action="#">
 					<label >Pincode</label>
 					<input type="number" class="pincode" id="pin" onblur="checkPin();" placeholder="6 digit pincode" >
 					<p id="error_message1"></p>
@@ -23,19 +22,19 @@
 					<input type="text" class="name" placeholder="Full Name" id="value" onblur="checkName();" >
 					<p id="error_message2"></p>
 					<label ><br>Address</label>
-					<input type="address" class="address" id="adress" onblur="checkAddress();"  >
+					<input type="address" class="address" id="adress" onblur="checkAddress();" placeholder="Flat/House No. Colony/Street No." >
 					<p id="error_message3"></p>
 					<label ><br>Email</label>
 					<input type="email" class="landmark"  id="email"  onblur="checkEmail();">
 					<p id="error_message4"></p>
+				<!-- 
 					<label ><br>month</label>
-			<!-- 
 					<input type="month" class="city" onblur="checkMonth();" id="month">
 					<p id="error_message5"></p>
 					<label ><br>Date</label>
 					<input type="date" class="city" onblur="checkDate();" id="date">
 					<p id="error_message6"></p>
-			 -->
+ 				-->
 					<label ><br>Password</label>
 					<input type="password" class="state" id="pass" placeholder="Password" onblur="checkPassword();" >
 					<p id="error_message7"></p>
@@ -58,7 +57,7 @@
 					<p id="error_message9"></p>
 					<input type="reset" value="Reset" class="reset">
 					<span id="error_message"></span>
-					<input  type="button" name="submit" id="submit" value="Submit">
+					<input  type="button" name="submit" id="submit" onclick="display()" value="Submit">
 				</form>
 			</div>
 		</div>
